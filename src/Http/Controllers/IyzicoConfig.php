@@ -1,17 +1,17 @@
 <?php
 
-namespace Damalis\Iyzico\Http\Controllers;
+namespace Aghaeian\Isbank\Http\Controllers;
 
-use Iyzipay\Options;
+use Isbank\Options;
 
-class IyzicoConfig
+class IsbankConfig
 {
 
     public function options()
     {
         $options = new Options();
-        $public = core()->getConfigData('sales.payment_methods.iyzico.public_key');
-        $secret = core()->getConfigData('sales.payment_methods.iyzico.secret_key');
+        $public = core()->getConfigData('sales.payment_methods.isbank.public_key');
+        $secret = core()->getConfigData('sales.payment_methods.isbank.secret_key');
         $options->setApiKey($public);
         $options->setSecretKey($secret);
         
@@ -22,18 +22,18 @@ class IyzicoConfig
     }
 
     /**
-     * Setting up and Returns İyzico SDK environment with İyzico Access credentials.
+     * Setting up and Returns Isbank SDK environment with Isbank Access credentials.
      * For demo purpose, we are using SandboxEnvironment. In production this will be
      * ProductionEnvironment.
      */
 	public function environment()
     { 
-        $iyzicoMode = core()->getConfigData('sales.payment_methods.iyzico.sandbox');
+        $isbankMode = core()->getConfigData('sales.payment_methods.isbank.sandbox');
 
-        if ($iyzicoMode) {			
-            return "https://sandbox-api.iyzipay.com";
+        if ($isbankMode) {			
+            return "testsanalpos.est.com.tr";
         }
 
-        return "https://api.merchant.iyzico.com";
+        return "spos.isbank.com.tr";
     }
 }
