@@ -1,5 +1,5 @@
 {
-	"name": "aghaeian/laravel-pos-isbank",
+	"name": "Aghaeian/laravel-pos-isbank",
 	"type": "library",
 	"description": "isbank payment gateway for bagisto",
 	"keywords": ["payment gateway", "payment", "bagisto", "isbank", "isbank"],
