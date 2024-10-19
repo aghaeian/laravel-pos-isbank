@@ -22,7 +22,7 @@ class isbankConfig
     }
 
     /**
-     * Setting up and Returns İyzico SDK environment with İyzico Access credentials.
+     * Setting up and Returns isbank SDK environment with İyzico Access credentials.
      * For demo purpose, we are using SandboxEnvironment. In production this will be
      * ProductionEnvironment.
      */
@@ -31,9 +31,9 @@ class isbankConfig
         $isbankMode = core()->getConfigData('sales.payment_methods.isbank.sandbox');
 
         if ($isbankMode) {			
-            return "testsanalpos.est.com.tr";
+            return "https://entegrasyon.asseco-see.com.tr/fim/est3Dgate";
         }
 
-        return "spos.isbank.com.tr";
+        return "https://sanalpos.isbank.com.tr/fim/est3Dgate";
     }
 }
