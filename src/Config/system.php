@@ -22,15 +22,29 @@ return [
                 'channel_based' => false,
                 'locale_based' => true
             ], [
-                'name' => 'public_key',
-                'title' => 'isbank::app.admin.system.public-key',
+                'name' => 'client_id',
+                'title' => 'isbank::app.admin.system.client-id',
                 'type' => 'text',
                 'validation' => 'required',
                 'channel_based' => false,
                 'locale_based' => true
             ], [
-                'name'          => 'secret_key',
-                'title'         => 'isbank::app.admin.system.secret-key',
+                'name'          => 'api_user',
+                'title'         => 'isbank::app.admin.system.api-user',
+                'type'          => 'text',
+                'validation'    => 'required',
+                'channel_based' => false,
+                'locale_based'  => true,
+            ],[
+                'name' => 'store_key',
+                'title' => 'isbank::app.admin.system.store_key',
+                'type' => 'text',
+                'validation' => 'required',
+                'channel_based' => false,
+                'locale_based' => true
+            ], [
+                'name'          => 'api_user_password',
+                'title'         => 'isbank::app.admin.system.api-user-password',
                 'type'          => 'text',
                 'validation'    => 'required',
                 'channel_based' => false,
