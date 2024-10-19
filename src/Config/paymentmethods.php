@@ -1,12 +1,12 @@
 <?php
 
 return [
-    'iyzico' => [
-        'code' => 'iyzico',
-        'title' => 'Iyzico',
-        'description' => 'Iyzico Payment Gateway',
-        'image' => asset('/vendor/damalis/iyzico/assets/images/iyzico.png'),
-        'class' => 'Damalis\Iyzico\Payment\Iyzico',
+    'isbank' => [
+        'code' => 'isbank',
+        'title' => 'isbank',
+        'description' => 'Isbank Payment Gateway',
+        'image' => asset('/vendor/damalis/isbank/assets/images/iyzico.png'),
+        'class' => 'Aghaeian\Isbank\Payment\Isbank',
         'active' => true,
         'sort'=> 5,
     ]
