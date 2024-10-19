@@ -1,7 +1,7 @@
 const { mix } = require("laravel-mix");
 require("laravel-mix-merge-manifest");
 
-var publicPath = "../../../public/vendor/Aghaeian/isbank/assets";
+var publicPath = "../../../public/vendor/aghaeian/isbank/assets";
 
 
 mix.setPublicPath(publicPath).mergeManifest();
