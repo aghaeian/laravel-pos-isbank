@@ -30,3 +30,6 @@ php artisan optimize:clear
 Go to Admin -> Configuration -> Sales -> Payment Methods -> isbank
 
 [Test account for payment](#)
+
+
+#### Based on https://github.com/damalis/bagisto-iyzico.git
