@@ -31,9 +31,9 @@ class isbankConfig
         $isbankMode = core()->getConfigData('sales.payment_methods.isbank.sandbox');
 
         if ($isbankMode) {			
-            return "https://sandbox-api.isbank.com";
+            return "testsanalpos.est.com.tr";
         }
 
-        return "https://api.merchant.isbank.com";
+        return "spos.isbank.com.tr";
     }
 }
