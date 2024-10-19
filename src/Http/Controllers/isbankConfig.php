@@ -12,8 +12,10 @@ class isbankConfig
         $options = new Options();
         $public = core()->getConfigData('sales.payment_methods.isbank.public_key');
         $secret = core()->getConfigData('sales.payment_methods.isbank.secret_key');
-        $options->setApiKey($public);
-        $options->setSecretKey($secret);
+        $options->setApiUser($public);
+        $options->setStoreKey($secret);
+	$options->setClientId($secret);
+        $options->setApiUserPassword($public);
         
         $baseUrl = $this->environment();
         $options->setBaseUrl($baseUrl);
