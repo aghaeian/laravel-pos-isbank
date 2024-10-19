@@ -5,8 +5,8 @@ return [
         'code' => 'isbank',
         'title' => 'isbank',
         'description' => 'isbank Payment Gateway',
-        'image' => asset('/vendor/Aghaeian/isbank/assets/images/isbank.png'),
-        'class' => 'Aghaeian\isbank\Payment\isbank',
+        'image' => asset('/vendor/damalis/isbank/assets/images/isbank.png'),
+        'class' => 'Damalis\isbank\Payment\isbank',
         'active' => true,
         'sort'=> 5,
     ]

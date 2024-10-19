@@ -1,24 +1,24 @@
 <?php
 
-namespace Aghaeian\isbank\Http\Controllers;
+namespace Damalis\isbank\Http\Controllers;
 
 use Webkul\Checkout\Facades\Cart;
 use Webkul\Sales\Repositories\OrderRepository;
 use Webkul\Sales\Repositories\InvoiceRepository;
 use Illuminate\Http\Request;
 
-use Aghaeian\isbank\Http\Controllers\isbankConfig;
-use Isbank\Model\Address;
-use Isbank\Model\BasketItem;
-use Isbank\Model\BasketItemType;
-use Isbank\Model\Buyer;
-use Isbank\Model\CheckoutFormInitialize;
-use Isbank\Model\Locale;
-use Isbank\Model\PaymentGroup;
-use Isbank\Options;
-use Isbank\Model\CheckoutForm;
-use Isbank\Request\RetrieveCheckoutFormRequest;
-use Isbank\Request\CreateCheckoutFormInitializeRequest;
+use Damalis\isbank\Http\Controllers\isbankConfig;
+use isbank\Model\Address;
+use isbank\Model\BasketItem;
+use isbank\Model\BasketItemType;
+use isbank\Model\Buyer;
+use isbank\Model\CheckoutFormInitialize;
+use isbank\Model\Locale;
+use isbank\Model\PaymentGroup;
+use isbank\Options;
+use isbank\Model\CheckoutForm;
+use isbank\Request\RetrieveCheckoutFormRequest;
+use isbank\Request\CreateCheckoutFormInitializeRequest;
 
 class isbankController extends Controller
 {
@@ -63,7 +63,7 @@ class isbankController extends Controller
         //$api->setPaidPrice("1.2");
         $currency = $cart->cart_currency_code;
         if($currency == "TRY") $currency = "TL";
-        $api->setCurrency(constant('Isbank\Model\Currency::' . $currency));
+        $api->setCurrency(constant('isbank\Model\Currency::' . $currency));
         $api->setBasketId($cart->id);
         $api->setPaymentGroup(PaymentGroup::PRODUCT);
         $api->setCallbackUrl(request()->getSchemeAndHttpHost() . "/isbank-payment-callback/" . $checkoutToken);
@@ -157,7 +157,7 @@ class isbankController extends Controller
             # make request
             $checkoutForm = CheckoutForm::retrieve($api, (new isbankConfig)->options());
             
-            if(strtolower($checkoutForm->getPaymentStatus()) !== \Isbank\Model\Status::SUCCESS) {
+            if(strtolower($checkoutForm->getPaymentStatus()) !== \isbank\Model\Status::SUCCESS) {
                 session()->flash('error', 'isbank payment either cancelled or transaction failure.');
                 return redirect()->route('shop.checkout.cart.index');                
             }

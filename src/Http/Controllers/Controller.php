@@ -1,6 +1,6 @@
 <?php
 
-namespace Aghaeian\isbank\Http\Controllers;
+namespace Damalis\isbank\Http\Controllers;
 
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;

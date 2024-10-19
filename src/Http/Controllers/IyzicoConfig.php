@@ -1,8 +1,8 @@
 <?php
 
-namespace Aghaeian\isbank\Http\Controllers;
+namespace Damalis\isbank\Http\Controllers;
 
-use Isbank\Options;
+use isbank\Options;
 
 class isbankConfig
 {
@@ -31,7 +31,7 @@ class isbankConfig
         $isbankMode = core()->getConfigData('sales.payment_methods.isbank.sandbox');
 
         if ($isbankMode) {			
-            return "https://sandbox-api.Isbank.com";
+            return "https://sandbox-api.isbank.com";
         }
 
         return "https://api.merchant.isbank.com";
