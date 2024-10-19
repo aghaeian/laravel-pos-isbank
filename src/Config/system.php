@@ -45,7 +45,7 @@ return [
             ], [
                 'name'          => 'api_user_password',
                 'title'         => 'isbank::app.admin.system.api-user-password',
-                'type'          => 'text',
+                'type'          => 'password',
                 'validation'    => 'required',
                 'channel_based' => false,
                 'locale_based'  => true,
