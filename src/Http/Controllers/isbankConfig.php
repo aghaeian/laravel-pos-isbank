@@ -11,8 +11,8 @@ class isbankConfig
     {
         $options = new Options();
 	$public = core()->getConfigData('sales.payment_methods.isbank.client_id');
-        $secret = core()->getConfigData('sales.payment_methods.isbank.api_user');
-        $public = core()->getConfigData('sales.payment_methods.isbank.store_key');
+        $public = core()->getConfigData('sales.payment_methods.isbank.api_user');
+        $secret = core()->getConfigData('sales.payment_methods.isbank.store_key');
         $secret = core()->getConfigData('sales.payment_methods.isbank.api_user_password');
         $options->setClientId($public);
 	$options->setApiUser($public);
