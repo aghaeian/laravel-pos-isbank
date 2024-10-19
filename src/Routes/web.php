@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\VerifyCsrfToken;
 
-use Damalis\isbank\Http\Controllers\isbankController;
+use aghaeian\isbank\Http\Controllers\isbankController;
 
 Route::group(['middleware' => ['web', 'theme', 'locale', 'currency']], function () {    
     Route::get('isbank-payment-checkout', [

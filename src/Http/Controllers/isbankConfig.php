@@ -1,6 +1,6 @@
 <?php
 
-namespace Damalis\isbank\Http\Controllers;
+namespace aghaeian\isbank\Http\Controllers;
 
 use isbank\Options;
 

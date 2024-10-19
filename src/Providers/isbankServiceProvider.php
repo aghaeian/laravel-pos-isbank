@@ -1,13 +1,13 @@
 <?php
  
-namespace Damalis\isbank\Providers;
+namespace aghaeian\isbank\Providers;
 
 use Illuminate\Support\ServiceProvider;
  
 /**
  *  isbank service provider
  *
- * @author  damalis
+ * @author  aghaeian
  */
 class isbankServiceProvider extends ServiceProvider
 {

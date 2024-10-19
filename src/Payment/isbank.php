@@ -1,6 +1,6 @@
 <?php
 
-namespace Damalis\isbank\Payment;
+namespace aghaeian\isbank\Payment;
 
 use Webkul\Payment\Payment\Payment;
 

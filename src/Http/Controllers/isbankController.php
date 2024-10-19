@@ -1,13 +1,13 @@
 <?php
 
-namespace Damalis\isbank\Http\Controllers;
+namespace aghaeian\isbank\Http\Controllers;
 
 use Webkul\Checkout\Facades\Cart;
 use Webkul\Sales\Repositories\OrderRepository;
 use Webkul\Sales\Repositories\InvoiceRepository;
 use Illuminate\Http\Request;
 
-use Damalis\isbank\Http\Controllers\isbankConfig;
+use aghaeian\isbank\Http\Controllers\isbankConfig;
 use isbank\Model\Address;
 use isbank\Model\BasketItem;
 use isbank\Model\BasketItemType;
