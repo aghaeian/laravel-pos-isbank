@@ -37,7 +37,7 @@ return [
                 'locale_based'  => true,
             ],[
                 'name' => 'store_key',
-                'title' => 'isbank::app.admin.system.store_key',
+                'title' => 'isbank::app.admin.system.store-key',
                 'type' => 'text',
                 'validation' => 'required',
                 'channel_based' => false,
