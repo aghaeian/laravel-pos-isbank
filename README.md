@@ -1,18 +1,18 @@
-# [bagisto isbank](https://github.com/Aghaeian/bagisto-isbank)
+# [bagisto isbank](https://github.com/Aghaeian/laravel-pos-isbank)
 
 isbank payment gateway for [Bagisto Laravel ecommerce](https://bagisto.com/)
 
-<p align="left"> <a href="https://www.isbank.com/" target="_blank" rel="noreferrer"> <img src="https://avatars.githubusercontent.com/u/3815564?s=200&v=4" alt="isbank" height="40" width="40"/> </a>&nbsp;&nbsp;&nbsp; <a href="https://bagisto.com/" target="_blank" rel="noreferrer"> <img src="https://avatars.githubusercontent.com/u/43133047?s=200&v=4" alt="bagisto laravel ecommerce" width="40" height="40" width="40"/> </a>
+<p align="left"> <a href="https://www.isbank.com.tr/" target="_blank" rel="noreferrer"> <img src="#" alt="isbank" height="40" width="40"/> </a>&nbsp;&nbsp;&nbsp; <a href="https://bagisto.com/" target="_blank" rel="noreferrer"> <img src="https://avatars.githubusercontent.com/u/43133047?s=200&v=4" alt="bagisto laravel ecommerce" width="40" height="40" width="40"/> </a>
 
 #### With this project you can quickly run the following:
 
-- [isbank](https://github.com/isbank/Isbank-php)
+- [isbank](https://github.com/aghaeian)
 - [Bagisto](https://github.com/bagisto)
 
 ## Installation
 
 ```
-composer require Aghaeian/bagisto-isbank
+composer require Aghaeian/laravel-pos-isbank
 ```
 
 - Run these commands below to complete the setup
@@ -29,4 +29,4 @@ php artisan optimize:clear
 
 Go to Admin -> Configuration -> Sales -> Payment Methods -> isbank
 
-[Test account for payment](https://sandbox-merchant.Isbank.com/auth/login)
+[Test account for payment](#)
