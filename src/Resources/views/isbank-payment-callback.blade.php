@@ -1,13 +1,13 @@
 <x-shop::layouts.account>
     <!-- Title of the page -->
     <x-slot:title>
-        @lang('iyzico::app.admin.system.iyzicoPayment')
+        @lang('isbank::app.admin.system.isbankPayment')
     </x-slot:title>
 
     <div class="flex justify-between items-center">
         <h2 class="text-[26px] font-medium">
             @section('page_title')
-				{{ __('Iyzico Checkout....') }}
+				{{ __('isbank Checkout....') }}
 			@stop
 
 			@push('scripts')

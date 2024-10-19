@@ -3,12 +3,12 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\VerifyCsrfToken;
 
-use Damalis\Iyzico\Http\Controllers\IyzicoController;
+use Aghaeian\isbank\Http\Controllers\isbankController;
 
 Route::group(['middleware' => ['web', 'theme', 'locale', 'currency']], function () {    
-    Route::get('iyzico-payment-checkout', [
-        IyzicoController::class, 'checkoutWithIyzico'])->name('iyzico.payment.checkout');    
-    Route::post('iyzico-payment-callback/{token}', [
-        IyzicoController::class, 'paymentCallback'
-    ])->withoutMiddleware(VerifyCsrfToken::class)->name('iyzico.payment.callback'); 
+    Route::get('isbank-payment-checkout', [
+        isbankController::class, 'checkoutWithisbank'])->name('isbank.payment.checkout');    
+    Route::post('isbank-payment-callback/{token}', [
+        isbankController::class, 'paymentCallback'
+    ])->withoutMiddleware(VerifyCsrfToken::class)->name('isbank.payment.callback'); 
 });

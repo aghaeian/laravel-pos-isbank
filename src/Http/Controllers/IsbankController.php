@@ -1,26 +1,26 @@
 <?php
 
-namespace Damalis\Iyzico\Http\Controllers;
+namespace Aghaeian\isbank\Http\Controllers;
 
 use Webkul\Checkout\Facades\Cart;
 use Webkul\Sales\Repositories\OrderRepository;
 use Webkul\Sales\Repositories\InvoiceRepository;
 use Illuminate\Http\Request;
 
-use Damalis\Iyzico\Http\Controllers\IyzicoConfig;
-use Iyzipay\Model\Address;
-use Iyzipay\Model\BasketItem;
-use Iyzipay\Model\BasketItemType;
-use Iyzipay\Model\Buyer;
-use Iyzipay\Model\CheckoutFormInitialize;
-use Iyzipay\Model\Locale;
-use Iyzipay\Model\PaymentGroup;
-use Iyzipay\Options;
-use Iyzipay\Model\CheckoutForm;
-use Iyzipay\Request\RetrieveCheckoutFormRequest;
-use Iyzipay\Request\CreateCheckoutFormInitializeRequest;
+use Aghaeian\isbank\Http\Controllers\isbankConfig;
+use Isbank\Model\Address;
+use Isbank\Model\BasketItem;
+use Isbank\Model\BasketItemType;
+use Isbank\Model\Buyer;
+use Isbank\Model\CheckoutFormInitialize;
+use Isbank\Model\Locale;
+use Isbank\Model\PaymentGroup;
+use Isbank\Options;
+use Isbank\Model\CheckoutForm;
+use Isbank\Request\RetrieveCheckoutFormRequest;
+use Isbank\Request\CreateCheckoutFormInitializeRequest;
 
-class IyzicoController extends Controller
+class isbankController extends Controller
 {
     /**
      * OrderRepository $orderRepository
@@ -47,14 +47,14 @@ class IyzicoController extends Controller
         $this->invoiceRepository = $invoiceRepository;
     }
 
-    public function checkoutWithIyzico(Request $request)
+    public function checkoutWithisbank(Request $request)
     {   
         $cart = Cart::getCart();
         $cartbillingAddress = $cart->billing_address;
 		
         $checkoutToken = $request->session()->get('_token');
 		
-        /** @var IyzicoApiClient $api */				
+        /** @var isbankApiClient $api */				
         # create request class
         $api = new CreateCheckoutFormInitializeRequest();
         $api->setLocale($request->getLocale());
@@ -63,10 +63,10 @@ class IyzicoController extends Controller
         //$api->setPaidPrice("1.2");
         $currency = $cart->cart_currency_code;
         if($currency == "TRY") $currency = "TL";
-        $api->setCurrency(constant('Iyzipay\Model\Currency::' . $currency));
+        $api->setCurrency(constant('Isbank\Model\Currency::' . $currency));
         $api->setBasketId($cart->id);
         $api->setPaymentGroup(PaymentGroup::PRODUCT);
-        $api->setCallbackUrl(request()->getSchemeAndHttpHost() . "/iyzico-payment-callback/" . $checkoutToken);
+        $api->setCallbackUrl(request()->getSchemeAndHttpHost() . "/isbank-payment-callback/" . $checkoutToken);
         $api->setEnabledInstallments(array(2, 3, 6, 9));
 		
         $buyer = new Buyer();
@@ -128,7 +128,7 @@ class IyzicoController extends Controller
         $api->setPaidPrice(number_format((float)$cart->grand_total, 2, '.', ''));
          
         # make request
-        $checkoutFormInitialize = CheckoutFormInitialize::create($api, (new IyzicoConfig)->options());
+        $checkoutFormInitialize = CheckoutFormInitialize::create($api, (new isbankConfig)->options());
 
         if( $checkoutFormInitialize->getStatus() != "success" ) {
             session()->flash('error', $checkoutFormInitialize->geterrorCode() . ", message: " . $checkoutFormInitialize->geterrorMessage());
@@ -136,7 +136,7 @@ class IyzicoController extends Controller
         } else {					
             //$request->session()->put('paymentcontent_msg', $checkoutFormInitialize->getCheckoutFormContent());
             $paymentcontent_msg = $checkoutFormInitialize->getCheckoutFormContent();        
-            return view('iyzico::iyzico-payment-callback')->with(compact('paymentcontent_msg'));
+            return view('isbank::isbank-payment-callback')->with(compact('paymentcontent_msg'));
         }
     }
 
@@ -147,7 +147,7 @@ class IyzicoController extends Controller
     {   
         try {
             /**
-             * @var IyzicoApiClient $api
+             * @var isbankApiClient $api
              */
             $api = new RetrieveCheckoutFormRequest();
             $api->setLocale($request->getLocale());
@@ -155,15 +155,15 @@ class IyzicoController extends Controller
             $api->setToken($request->input('token'));
             
             # make request
-            $checkoutForm = CheckoutForm::retrieve($api, (new IyzicoConfig)->options());
+            $checkoutForm = CheckoutForm::retrieve($api, (new isbankConfig)->options());
             
-            if(strtolower($checkoutForm->getPaymentStatus()) !== \Iyzipay\Model\Status::SUCCESS) {
-                session()->flash('error', 'Iyzico payment either cancelled or transaction failure.');
+            if(strtolower($checkoutForm->getPaymentStatus()) !== \Isbank\Model\Status::SUCCESS) {
+                session()->flash('error', 'isbank payment either cancelled or transaction failure.');
                 return redirect()->route('shop.checkout.cart.index');                
             }
         } catch (SignatureVerificationError $e) {
                 $success = false;
-                $error = 'Iyzico Error : ' . $e->getMessage();
+                $error = 'isbank Error : ' . $e->getMessage();
         }
 
         $order = $this->orderRepository->create(Cart::prepareDataForOrder());

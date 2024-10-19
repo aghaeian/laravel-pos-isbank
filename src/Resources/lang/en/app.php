@@ -3,7 +3,7 @@
 return [
     'admin' => [
         'system' => [
-            'iyzicoPayment' => 'Iyzico Payment',
+            'isbankPayment' => 'isbank Payment',
             'title' => 'Title',
             'description' => 'Description',
             'status' => 'Status',
@@ -17,6 +17,6 @@ return [
 
     ],'shop' => [
         'went-wrong' => 'Something went wrong !',
-        'payment-cancelled' => 'Iyzico Payment has been cancelled',
+        'payment-cancelled' => 'isbank Payment has been cancelled',
     ]
 ];  

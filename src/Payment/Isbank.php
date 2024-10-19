@@ -1,17 +1,17 @@
 <?php
 
-namespace Damalis\Iyzico\Payment;
+namespace Aghaeian\isbank\Payment;
 
 use Webkul\Payment\Payment\Payment;
 
-class Iyzico extends Payment
+class isbank extends Payment
 {
     /**
      * Payment method code
      *
      * @var string
      */
-    protected $code  = 'iyzico';
+    protected $code  = 'isbank';
 
     /**
     * Get redirect url.
@@ -20,6 +20,6 @@ class Iyzico extends Payment
     */
     public function getRedirectUrl()
     {
-        return route('iyzico.payment.checkout');        
+        return route('isbank.payment.checkout');        
     }
 }

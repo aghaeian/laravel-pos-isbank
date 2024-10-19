@@ -1,15 +1,15 @@
 <?php
  
-namespace Damalis\Iyzico\Providers;
+namespace Aghaeian\isbank\Providers;
 
 use Illuminate\Support\ServiceProvider;
  
 /**
- *  Iyzico service provider
+ *  isbank service provider
  *
- * @author  damalis
+ * @author  Aghaeian
  */
-class IyzicoServiceProvider extends ServiceProvider
+class isbankServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap services.
@@ -23,9 +23,9 @@ class IyzicoServiceProvider extends ServiceProvider
 		
         $this->loadRoutesFrom(__DIR__ . '/../Routes/web.php');
 
-        $this->loadTranslationsFrom(__DIR__ . '/../Resources/lang', 'iyzico');
+        $this->loadTranslationsFrom(__DIR__ . '/../Resources/lang', 'isbank');
 
-        $this->loadViewsFrom(__DIR__ . '/../Resources/views', 'iyzico');
+        $this->loadViewsFrom(__DIR__ . '/../Resources/views', 'isbank');
 
     }
  

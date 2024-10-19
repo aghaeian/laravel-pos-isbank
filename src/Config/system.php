@@ -2,42 +2,42 @@
 
 return [
     [
-        'key' => 'sales.payment_methods.iyzico',
-        'name' => 'Iyzico',
-		'info' => 'iyzico::app.admin.system.info',
+        'key' => 'sales.payment_methods.isbank',
+        'name' => 'isbank',
+		'info' => 'isbank::app.admin.system.info',
         'sort' => 5,
         'fields' => [
             [
                 'name' => 'title',
-                'title' => 'iyzico::app.admin.system.title',
+                'title' => 'isbank::app.admin.system.title',
                 'type' => 'text',
                 'validation' => 'required',
                 'channel_based' => false,
                 'locale_based' => true
             ], [
                 'name' => 'description',
-                'title' => 'iyzico::app.admin.system.description',
+                'title' => 'isbank::app.admin.system.description',
                 'type' => 'textarea',
                 'validation' => 'required',
                 'channel_based' => false,
                 'locale_based' => true
             ], [
                 'name' => 'public_key',
-                'title' => 'iyzico::app.admin.system.public-key',
+                'title' => 'isbank::app.admin.system.public-key',
                 'type' => 'text',
                 'validation' => 'required',
                 'channel_based' => false,
                 'locale_based' => true
             ], [
                 'name'          => 'secret_key',
-                'title'         => 'iyzico::app.admin.system.secret-key',
+                'title'         => 'isbank::app.admin.system.secret-key',
                 'type'          => 'text',
                 'validation'    => 'required',
                 'channel_based' => false,
                 'locale_based'  => true,
             ],/* [
                 'name'          => 'allowed_installments',
-                'title'         => 'iyzico::app.admin.system.allowed-installments',
+                'title'         => 'isbank::app.admin.system.allowed-installments',
                 'type'			=> 'text',
                 'validation'	=> 'numeric',
 				'default_value' => '0',
@@ -46,20 +46,20 @@ return [
 				'default_value' => '1',
             ], */[
                 'name' => 'sandbox',
-                'title' => 'iyzico::app.admin.system.sandbox',
+                'title' => 'isbank::app.admin.system.sandbox',
                 'type' => 'boolean',
                 'channel_based' => false,
                 'locale_based'  => true
             ], [
                 'name' => 'status',
-                'title' => 'iyzico::app.admin.system.status',
+                'title' => 'isbank::app.admin.system.status',
                 'type' => 'boolean',                
                 'validation' => 'required',
                 'channel_based' => false,
                 'locale_based'  => true
             ], [
                 'name' => 'sort',
-                'title' => 'iyzico::app.admin.system.sort',
+                'title' => 'isbank::app.admin.system.sort',
                 'type' => 'select',
                 'channel_based' => false,
                 'locale_based'  => true,
