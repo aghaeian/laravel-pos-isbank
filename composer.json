@@ -1,30 +1,30 @@
 {
-	"name": "Aghaeian/bagisto-isbank",
+	"name": "aghaeian/laravel-pos-isbank",
 	"type": "library",
 	"description": "isbank payment gateway for bagisto",
-	"keywords": ["payment gateway", "payment", "bagisto", "isbank", "Isbank"],
-	"homepage": "https://github.com/Aghaeian/bagisto-isbank",
+	"keywords": ["payment gateway", "payment", "bagisto", "isbank", "isbank"],
+	"homepage": "https://github.com/Aghaeian/laravel-pos-isbank",
 	"license": "MIT",
 	"minimum-stability": "dev",
 	"authors": [
 		{
-			"name": "Aghaeian",
-			"email": "erdal80@hotmail.com",
+			"name": "Hamed Aghaeian Chelghaei",
+			"email": "aghaieyan@gmail.com",
 			"homepage": "https://github.com/Aghaeian"
 		}
 	],
 	"require": {
-		"isbank/Isbank-php": ">=2.0.54"
+		"isbank/isbank-php": ">=2.0.54"
 	},
 	"autoload": {
 		"psr-4": {
-			"Aghaeian\\isbank\\": "src/"
+			"aghaeian\\isbank\\": "src/"
 		}
 	},
   "extra": {
     "laravel": {
       "providers": [
-        "Aghaeian\\isbank\\Providers\\isbankServiceProvider"
+        "aghaeian\\isbank\\Providers\\isbankServiceProvider"
       ],
       "aliases": {}
     }
